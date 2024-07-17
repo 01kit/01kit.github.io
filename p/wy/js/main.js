@@ -59,7 +59,7 @@
         if ([17, 18].indexOf(item.id) > -1) {
           html += ` <img src="/p/wy/img/icon-jingxuan-1.png" class="w-8 absolute z-10 right-4 top-4" />`;
         }
-        html += `   <img src="${item.image_thumbnail}" class="w-2/3 mx-auto" />`;
+        html += `   <img src="/p/wy/img/nopic.png" class="item-image w-2/3 mx-auto rounded-2xl" alt="loading..."  data-src="${item.image_thumbnail}" />`;
         html += `   <p class="mt-4 text-sm font-bold text-center">${item.short_name}</p>`;
         html += `   <p class="mt-2 text-sm text-center"><span class="text-xs pr-1">¥</span>${item.price}</p>`;
         html += ` </div>`;
@@ -71,6 +71,20 @@
       }
 
       itemsElement.innerHTML = html;
+
+      const observer = new IntersectionObserver((entries) => {
+        for (let i of entries) {
+          if (i.isIntersecting) {
+            let img = i.target;
+            let trueSrc = img.getAttribute("data-src");
+            img.setAttribute("src", trueSrc);
+            observer.unobserve(img);
+          }
+        }
+      });
+      select(".item-image", true).forEach(i => {
+        observer.observe(i);
+      })
 
       on('click', '#btn-show-popup-filter', function () {
         select('#popup-filter').classList.remove('invisible');
@@ -400,9 +414,4 @@
 
   const page = select('body');
   (page && pagesInit[page.id]) ? pagesInit[page.id]() : console.log('can not init page');
-})()
-
-
-
-
-
+})();
