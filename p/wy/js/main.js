@@ -32,8 +32,12 @@
    */
   const pagesInit = {
     'page-home': async function () {
-      const carts = await _http.fetchCarts();
-      select('#carts-count').textContent = carts.length;
+
+      if (Number(window.localStorage.getItem("ad")) !== 1) {
+        select('#popup-offical-post').classList.remove('invisible');
+        window.localStorage.setItem("ad", 1);
+      }
+
 
       on('click', '#btn-show-popup-contact-qr', function () {
         select('#popup-contact-qr').classList.remove('invisible');
@@ -42,8 +46,24 @@
         select('#popup-contact-qr').classList.add('invisible');
       });
 
-      const itemsElement = select('#items');
+      on('click', '#btn-show-popup-offical-qr', function () {
+        select('#popup-offical-qr').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-offical-qr', function () {
+        select('#popup-offical-qr').classList.add('invisible');
+      });
 
+      on('click', '#btn-show-popup-offical-post', function () {
+        select('#popup-offical-post').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-offical-post', function () {
+        select('#popup-offical-post').classList.add('invisible');
+      });
+
+      const carts = await _http.fetchCarts();
+      select('#carts-count').textContent = carts.length;
+
+      const itemsElement = select('#items');
       if (!itemsElement) {
         return;
       }
@@ -164,6 +184,8 @@
       select('#item-temperature').textContent = item.temperature;
       select('#item-volume').textContent = item.volume;
 
+      select('#share-dom-item-image-qr').src = item.image_qr;
+
       const carts = await _http.fetchCarts();
       select('#carts-count').textContent = carts.length;
 
@@ -217,8 +239,6 @@
             }, 2000);
           });
           clipboard.on("error", () => {
-            // console.log('当前客户端暂不支持复制');
-
             clipboard.destroy();
           });
         });
@@ -238,6 +258,24 @@
           select('#toast').classList.add('invisible');
           select('#toast-text').textContent = '';
         }, 2000);
+      });
+
+      on('click', '#btn-show-popup-share', async function () {
+        select('#share-dom-item-image').src = select('#item-image').src;
+        select('#share-dom-item-name').textContent = select('#item-name').textContent;
+        select('#share-dom-item-name-en').textContent = select('#item-name-en').textContent;
+
+        const canvas = await html2canvas(select('#share-dom'), {
+          useCORS: true, // 使用跨域
+        });
+
+        const base64ImgSrc = canvas.toDataURL("image/jpg");
+        document.querySelector("#share-post").src = base64ImgSrc;
+
+        select('#popup-share').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-share', function () {
+        select('#popup-share').classList.add('invisible');
       });
     },
     'page-cart': async function () {
@@ -378,8 +416,6 @@
             showToast('复制成功！马上发给店长下单吧～')
           });
           clipboard.on("error", () => {
-            // console.log('当前客户端暂不支持复制');
-
             clipboard.destroy();
           });
         });

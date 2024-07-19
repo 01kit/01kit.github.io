@@ -24,6 +24,13 @@
         </svg>
       </a>
     </div>
+    <div class="absolute z-10 right-12 top-4 rounded-lg bg-slate-950/50 text-white w-6 h-6 flex items-center justify-center">
+      <a href="/p/wy/index">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+      </a>
+    </div>
     <div class="absolute z-10 right-4 top-4 rounded-lg bg-slate-950/50 text-white w-6 h-6 flex items-center justify-center" id="btn-show-popup-contact-qr">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
         <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
@@ -31,8 +38,18 @@
     </div>
   </div>
   <div class="px-8 pt-4">
-    <p id="item-name" class="text-xl font-bold"></p>
-    <p id="item-name-en" class="text-neutral-400 text-sm"></p>
+    <div class="flex items-center justify-between">
+      <div class="flex-1">
+        <p id="item-name" class="text-xl font-bold"></p>
+        <p id="item-name-en" class="text-neutral-400 text-sm"></p>
+      </div>
+      <div class="ps-4 text-center" id="btn-show-popup-share">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 mx-auto">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15" />
+        </svg>
+        <p class="text-xs font-bold pt-2">分享好友</p>
+      </div>
+    </div>
   </div>
   <div class="px-4 pt-4">
     <div class="p-4 rounded-2xl shadow-lg bg-white">
@@ -65,7 +82,7 @@
   </div>
   <div class="px-4 pt-4">
     <div class="p-4 rounded-2xl shadow-lg bg-white">
-      <p class="text-md font-bold">品鉴笔记</p>
+      <p class="text-md font-bold">品鉴</p>
       <p id="item-desc" class="text-sm text-neutral-400 mt-4"></p>
     </div>
   </div>
@@ -131,7 +148,7 @@
     </div>
   </div>
   <div id="popup-buy" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
-    <div class="bg-white rounded-2xl p-4 w-80 text-center shadow-lg">
+    <div class="bg-white rounded-2xl p-4 py-6 w-80 text-center shadow-lg">
       <h1 class="font-bold text-xl">您正在购买</h1>
       <p id="popup-buy-item-name" class="text-md mt-4"></p>
       <div class="text-sm mt-4 flex items-center justify-center">
@@ -148,21 +165,21 @@
         </p>
       </div>
       <p class="text-md mt-4 text-xs">合计：<span class="text-rose-500 pr-1">¥</span><span id="popup-buy-total-price" class="text-rose-500 text-lg"></span></p>
-      <div class="mt-4 flex items-center justify-center">
-        <div id="btn-add-cart" class="text-sm bg-black rounded-lg px-4 py-2 text-white w-fit mx-auto flex items-center justify-center">
+      <div class="mt-4">
+        <div id="btn-add-cart" class="text-sm bg-black rounded-lg px-4 py-4 font-bold text-white w-2/3 mx-auto flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
           </svg>
           <p class="ps-1">加入购物清单</p>
         </div>
-        <div id="btn-copy-buy-info" class="text-sm bg-rose-500 rounded-lg px-4 py-2 text-white w-fit mx-auto flex items-center justify-center">
+        <div id="btn-copy-buy-info" class="mt-2 text-sm bg-rose-500 rounded-lg px-4 py-4 font-bold text-white w-2/3 mx-auto flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
           </svg>
           <p class="ps-1">复制购买信息</p>
         </div>
       </div>
-      <p class="mt-8">
+      <p class="mt-3">
         <img id="item-image" src="/p/wy/img/contact-qr.jpg" class="mx-auto w-1/2" alt="Loading..." />
       </p>
       <div class="text-xs mt-3 text-neutral-400 flex items-center justify-center text-rose-500">
@@ -179,12 +196,12 @@
     </div>
   </div>
   <div id="popup-contact-qr" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
-    <div class="bg-white rounded-2xl p-4 w-80 text-center shadow-lg">
-      <h1 class="font-bold text-xl">咨询</h1>
+    <div class="bg-white rounded-2xl p-4 py-6 w-80 text-center shadow-lg">
+      <h1 class="font-bold text-xl">店长二维码</h1>
       <p class="mt-3">
-        <img src="/p/wy/img/contact-qr.jpg" class="mx-auto w-1/2" alt="Loading..." />
+        <img src="/p/wy/img/contact-qr.jpg" class="mx-auto w-2/3" alt="Loading..." />
       </p>
-      <p class="mt-3 text-sm">长按扫码加店长咨询</p>
+      <p class="mt-3 text-sm">长按扫码咨询</p>
       <div class="text-xs mt-3 text-neutral-400 flex items-center justify-center text-rose-500">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
@@ -198,10 +215,41 @@
       </svg>
     </div>
   </div>
+  <div id="popup-share" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
+    <div class="bg-white rounded-2xl w-4/5 text-center overflow-hidden shadow-lg">
+      <img id="share-post" src="#" class="mx-auto w-full" alt="Loading..." />
+      <p class="text-sm py-4 bg-black text-white ">长按海报分享好友或朋友圈</p>
+    </div>
+    <div class="text-center text-white pt-8 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10" id="btn-hide-popup-share">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </div>
+  </div>
   <div id="toast" class="invisible w-full h-full fixed top-0 left-0 z-50 flex items-center justify-center flex-col">
     <p id="toast-text" class="max-w-80 p-4 rounded-2xl bg-slate-950/70 text-white text-sm text-center"></p>
   </div>
+  <div id="share-dom" class="absolute top-0 left-0 -z-50 flex items-center justify-center flex-col">
+    <div class="bg-white rounded-2xl text-center overflow-hidden py-4">
+      <div class="bg-neutral-50  p-4 m-4 mt-0">
+        <img id="share-dom-item-image" src="" class="mx-auto w-full" alt="Loading..." />
+        <p id="share-dom-item-name" class="text-md font-bold"></p>
+        <p id="share-dom-item-name-en" class="text-neutral-500 text-xs mt-1 pb-4"></p>
+      </div>
+      <div class="flex justify-between p-4 py-2">
+        <div class="text-left">
+          <p class="text-sm">红酒青年 - 夏日微醺推荐</p>
+          <p class="text-neutral-400 text-xs  mt-2">微信扫描二维码查看商品详情</p>
+          <p class="text-rose-500 text-xs mt-1">新人首单享特惠</p>
+        </div>
+        <div class="ps-4">
+          <img id="share-dom-item-image-qr" src="#" class="mx-auto w-20" alt="Loading..." />
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/p/wy/js/http.js"></script>
   <script src="/p/wy/js/main.js"></script>
 </body>

@@ -15,7 +15,16 @@
 </head>
 
 <body id="page-home" class="bg-neutral-50">
-  <div class="p-4">
+  <div class="fixed z-30 left-0 top-0 w-full flex items-center justify-between p-4 py-3 mb-3 text-sm text-black bg-white shadow-lg" id="btn-show-popup-offical-qr">
+    <div class="pe-2"><img src="/p/wy/img/favicon.jpg" class="mx-auto w-6 rounded-md" alt="Loading..." /></div>
+    <div class="flex-1 font-bold">关注红酒青年公众号，实时查看商品动态</div>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </div>
+  </div>
+  <div class="p-4 pt-20">
     <div class="flex items-center justify-between mb-4 font-bold">
       <a href="/p/wy/cart">
         <div class="flex items-center justify-end">
@@ -25,15 +34,23 @@
           <span class="text-sm ps-1" id="lnk-add-cart">购物清单(<span id="carts-count">0</span>)</span>
         </div>
       </a>
-      <div class="flex items-center ps-3" id="btn-show-popup-contact-qr">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-        </svg>
-        <p class="ps-1 text-sm">咨询</p>
+      <div class="flex items-center">
+        <div class="flex items-center pe-4" >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+          </svg>
+          <p class="text-sm ps-1" id="btn-show-popup-contact-qr">咨询</p>
+        </div>
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15" />
+          </svg>
+          <p class="text-sm" id="btn-show-popup-offical-post">分享</p>
+        </div>
       </div>
     </div>
     <img src="/p/wy/img/banner-1.jpg" class="rounded-xl shadow-lg" />
-    <div class="flex items-center justify-between pt-6 pb-3 px-2">
+    <div class="flex items-center justify-between py-3 pt-6 px-2">
       <div>
         <p class="text-lg font-bold ps-1" id="lnk-add-cart">夏日微熏推荐</p>
       </div>
@@ -48,7 +65,7 @@
     <div id="items" class="grid grid-cols-2 gap-3"></div>
   </div>
   <div id="popup-filter" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
-    <div class="bg-white rounded-2xl p-4 w-80 text-center shadow-lg">
+    <div class="bg-white rounded-2xl p-4 py-6 w-80 text-center shadow-lg">
       <h1 class="font-bold text-xl">商品排序</h1>
       <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl !bg-rose-500 text-white font-bold" data-sort="default">默认综合</p>
       <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl" data-sort="price-asc">价格由低到高</p>
@@ -61,12 +78,12 @@
     </div>
   </div>
   <div id="popup-contact-qr" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
-    <div class="bg-white rounded-2xl p-4 w-80 text-center shadow-lg">
-      <h1 class="font-bold text-xl">咨询</h1>
+    <div class="bg-white rounded-2xl p-4 py-6 w-80 text-center shadow-lg">
+      <h1 class="font-bold text-xl">店长二维码</h1>
       <p class="mt-3">
-        <img src="/p/wy/img/contact-qr.jpg" class="mx-auto w-1/2" alt="Loading..." />
+        <img src="/p/wy/img/contact-qr.jpg" class="mx-auto w-2/3" alt="Loading..." />
       </p>
-      <p class="mt-3 text-sm">长按扫码加店长咨询</p>
+      <p class="mt-3 text-sm">长按扫码咨询</p>
       <div class="text-xs mt-3 text-neutral-400 flex items-center justify-center text-rose-500">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
@@ -80,6 +97,32 @@
       </svg>
     </div>
   </div>
+  <div id="popup-offical-qr" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
+    <div class="bg-white rounded-2xl p-4 py-6 w-80 text-center shadow-lg">
+      <h1 class="font-bold text-xl">红酒青年公众号</h1>
+      <p class="mt-3">
+        <img src="/p/wy/img/offical-qr.jpg" class="mx-auto w-2/3" alt="Loading..." />
+      </p>
+      <p class="mt-3 text-sm">长按扫码关注</p>
+    </div>
+    <div class="text-center text-white pt-8 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10" id="btn-hide-popup-offical-qr">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </div>
+  </div>
+  <div id="popup-offical-post" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
+    <div class="bg-rose-500 rounded-2xl w-4/5 text-center shadow-lg overflow-hidden relative">
+      <img src="/p/wy/img/offical-summer-post.jpg" class="mx-auto w-full" alt="Loading..." />
+      <p class="text-sm font-bold text-white w-full text-center absolute z-50 left-0 bottom-4">长按海报分享好友或朋友圈</p>
+    </div>
+    <div class="text-center text-white pt-8 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10" id="btn-hide-popup-offical-post">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </div>
+  </div>
+  
   <script src="/p/wy/js/http.js"></script>
   <script src="/p/wy/js/main.js"></script>
 </body>
