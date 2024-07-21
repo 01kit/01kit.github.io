@@ -49,10 +49,26 @@ async function _removeCart(item) {
   window.localStorage.setItem('carts', JSON.stringify(carts.filter(o => o.id !== item.id)));
 }
 
+
+async function _fetchPointsItems() {
+  const response = await fetch("/p/wy/data/jdecard.json")
+  const data = await response.json();
+  return data.items;
+}
+
+async function _fetchPointsItem(id) {
+  const items = await _fetchPointsItems();
+  const item = items.filter(o => o.id === id)[0];
+  return item;
+}
+
+
 const _http = {
   fetchItems: _fetchItems,
   fetchItem: _fetchItem,
   fetchCarts: _fetchCarts,
   addCart: _addCart,
-  removeCart: _removeCart
+  removeCart: _removeCart,
+  fetchPointsItems: _fetchPointsItems,
+  fetchPointsItem: _fetchPointsItem,
 }

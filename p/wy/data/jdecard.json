@@ -1,0 +1,234 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "京东E卡50面值",
+      "image": "/p/wy/img/jdecard/classic/1.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/1.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/1.png",
+      "desc": "京东E卡经典卡50面值实体卡",
+      "points": 100,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "50元"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "京东E卡100面值",
+      "image": "/p/wy/img/jdecard/classic/2.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/2.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/2.png",
+      "desc": "京东E卡经典卡100面值实体卡",
+      "points": 198,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "100元"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "京东E卡200面值",
+      "image": "/p/wy/img/jdecard/classic/3.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/3.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/3.png",
+      "desc": "京东E卡经典卡200面值实体卡",
+      "points": 392,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "200元"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "京东E卡300面值",
+      "image": "/p/wy/img/jdecard/classic/4.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/4.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/4.png",
+      "desc": "京东E卡经典卡300面值实体卡",
+      "points": 582,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "300元"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "京东E卡500面值",
+      "image": "/p/wy/img/jdecard/classic/5.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/5.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/5.png",
+      "desc": "京东E卡经典卡500面值实体卡",
+      "points": 962,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "500元"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "京东E卡1000面值",
+      "image": "/p/wy/img/jdecard/classic/6.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/6.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/6.png",
+      "desc": "京东E卡经典卡1000面值实体卡",
+      "points": 1914,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "1000元"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "京东E卡2000面值",
+      "image": "/p/wy/img/jdecard/classic/7.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/7.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/7.png",
+      "desc": "京东E卡经典卡2000面值实体卡",
+      "points": 3816,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "2000元"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "京东E卡3000面值",
+      "image": "/p/wy/img/jdecard/classic/8.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/8.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/8.png",
+      "desc": "京东E卡经典卡3000面值实体卡",
+      "points": 5710,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "3000元"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "京东E卡4000面值",
+      "image": "/p/wy/img/jdecard/classic/9.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/9.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/9.png",
+      "desc": "京东E卡经典卡4000面值实体卡",
+      "points": 7597,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "4000元"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "京东E卡5000面值",
+      "image": "/p/wy/img/jdecard/classic/10.jpg",
+      "image_thumbnail": "/p/wy/img/jdecard/classic/thumbnail/10.jpg",
+      "image_qr": "/p/wy/img/jdecard/classic/qr/10.png",
+      "desc": "京东E卡经典卡5000面值实体卡",
+      "points": 9478,
+      "properties": [
+        {
+          "title": "品牌",
+          "content": "京东E卡"
+        },
+        {
+          "title": "类型",
+          "content": "实体卡 - 经典卡"
+        },
+        {
+          "title": "面值",
+          "content": "5000元"
+        }
+      ]
+    }
+  ]
+}

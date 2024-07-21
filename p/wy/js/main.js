@@ -32,12 +32,10 @@
    */
   const pagesInit = {
     'page-home': async function () {
-
       if (Number(window.localStorage.getItem("ad")) !== 1) {
         select('#popup-offical-post').classList.remove('invisible');
         window.localStorage.setItem("ad", 1);
       }
-
 
       on('click', '#btn-show-popup-contact-qr', function () {
         select('#popup-contact-qr').classList.remove('invisible');
@@ -136,7 +134,7 @@
           if ([17, 18].indexOf(sortItem.id) > -1) {
             html += ` <img src="/p/wy/img/icon-jingxuan-1.png" class="w-8 absolute z-10 right-4 top-4" />`;
           }
-          html += `   <img src="${sortItem.image_thumbnail}" class="w-2/3 mx-auto" />`;
+          html += `   <img src="/p/wy/img/nopic.png" class="item-image w-2/3 mx-auto rounded-2xl" alt="loading..."  data-src="${sortItem.image_thumbnail}" />`;
           html += `   <p class="mt-4 text-sm font-bold text-center">${sortItem.short_name}</p>`;
           html += `   <p class="mt-2 text-sm text-center"><span class="text-xs pr-1">¥</span>${sortItem.price}</p>`;
           html += ` </div>`;
@@ -145,13 +143,25 @@
 
         itemsElement.innerHTML = html;
 
+        const observer = new IntersectionObserver((entries) => {
+          for (let i of entries) {
+            if (i.isIntersecting) {
+              let img = i.target;
+              let trueSrc = img.getAttribute("data-src");
+              img.setAttribute("src", trueSrc);
+              observer.unobserve(img);
+            }
+          }
+        });
+        select(".item-image", true).forEach(i => {
+          observer.observe(i);
+        })
+
         select('.filter-item', true).forEach(o => o.classList.remove('!bg-rose-500', 'text-white', 'font-bold'));
         this.classList.add('!bg-rose-500', 'text-white', 'font-bold');
 
         select('#popup-filter').classList.add('invisible');
       }, true);
-
-
     },
     'page-item': async function () {
       on('click', '#btn-show-popup-contact-qr', async function () {
@@ -445,7 +455,258 @@
           select('#toast-text').textContent = '';
         }, delay);
       }
-    }
+    },
+    'page-points-mall': async function () {
+      on('click', '#btn-show-popup-contact-qr', function () {
+        select('#popup-contact-qr').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-contact-qr', function () {
+        select('#popup-contact-qr').classList.add('invisible');
+      });
+
+      on('click', '#btn-show-popup-offical-qr', function () {
+        select('#popup-offical-qr').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-offical-qr', function () {
+        select('#popup-offical-qr').classList.add('invisible');
+      });
+
+      on('click', '#btn-show-popup-points-post', function () {
+        select('#popup-points-post').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-points-post', function () {
+        select('#popup-points-post').classList.add('invisible');
+      });
+
+      const carts = await _http.fetchCarts();
+      select('#carts-count').textContent = carts.length;
+
+      const itemsElement = select('#items');
+      if (!itemsElement) {
+        return;
+      }
+
+      const items = await _http.fetchPointsItems();
+
+      let html = '';
+
+      for (let i = 0, len = items.length; i < len; i += 1) {
+        const item = items[i];
+        html += `<a href="/p/wy/points-item?id=${item.id}">`;
+        html += ` <div class="p-2 rounded-2xl shadow-lg bg-white relative">`;
+        html += `   <img src="/p/wy/img/nopic.png" class="item-image w-2/3 mx-auto rounded-2xl" alt="loading..."  data-src="${item.image_thumbnail}" />`;
+        html += `   <p class="mt-4 text-sm font-bold text-center">${item.name}</p>`;
+        html += `   <p class="mt-2 text-sm text-center"><span class="text-xs pr-1">积分</span>${item.points}</p>`;
+        html += ` </div>`;
+        html += `</a>`;
+      }
+
+      if (!html) {
+        return;
+      }
+
+      itemsElement.innerHTML = html;
+
+      const observer = new IntersectionObserver((entries) => {
+        for (let i of entries) {
+          if (i.isIntersecting) {
+            let img = i.target;
+            let trueSrc = img.getAttribute("data-src");
+            img.setAttribute("src", trueSrc);
+            observer.unobserve(img);
+          }
+        }
+      });
+      select(".item-image", true).forEach(i => {
+        observer.observe(i);
+      })
+
+      on('click', '#btn-show-popup-filter', function () {
+        select('#popup-filter').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-filter', function () {
+        select('#popup-filter').classList.add('invisible');
+      });
+      on('click', '.filter-item', function () {
+        const sort = this.dataset.sort;
+
+        let sortItems = [...items];
+
+        if (sort === 'points-asc') {
+          sortItems = sortItems.sort(function (prev, next) {
+            return prev.points - next.points
+          });
+        } else if (sort === 'points-desc') {
+          sortItems = sortItems.sort(function (prev, next) {
+            return next.points - prev.points
+          });
+        }
+
+        let html = '';
+
+        for (let i = 0, len = sortItems.length; i < len; i += 1) {
+          const sortItem = sortItems[i];
+          html += `<a href="/p/wy/points-item?id=${sortItem.id}">`;
+          html += ` <div class="p-2 rounded-2xl shadow-lg bg-white relative">`;
+          html += `   <img src="/p/wy/img/nopic.png" class="item-image w-2/3 mx-auto rounded-2xl" alt="loading..."  data-src="${sortItem.image_thumbnail}" />`;
+          html += `   <p class="mt-4 text-sm font-bold text-center">${sortItem.name}</p>`;
+          html += `   <p class="mt-2 text-sm text-center"><span class="text-xs pr-1">积分</span>${sortItem.points}</p>`;
+          html += ` </div>`;
+          html += `</a>`;
+        }
+
+        itemsElement.innerHTML = html;
+
+        const observer = new IntersectionObserver((entries) => {
+          for (let i of entries) {
+            if (i.isIntersecting) {
+              let img = i.target;
+              let trueSrc = img.getAttribute("data-src");
+              img.setAttribute("src", trueSrc);
+              observer.unobserve(img);
+            }
+          }
+        });
+        select(".item-image", true).forEach(i => {
+          observer.observe(i);
+        })
+
+        select('.filter-item', true).forEach(o => o.classList.remove('!bg-rose-500', 'text-white', 'font-bold'));
+        this.classList.add('!bg-rose-500', 'text-white', 'font-bold');
+
+        select('#popup-filter').classList.add('invisible');
+      }, true);
+    },
+    'page-points-item': async function () {
+      on('click', '.btn-show-popup-contact-qr', async function () {
+        select('#popup-contact-qr').classList.remove('invisible');
+      }, true);
+      on('click', '.btn-hide-popup-contact-qr', function () {
+        select('#popup-contact-qr').classList.add('invisible');
+      }, true);
+
+      const query = new URLSearchParams(window.location.href.split('?')[1]);
+
+      const id = Number(query.get('id'));
+
+      const item = await _http.fetchPointsItem(id);
+
+      if (!item) {
+        return
+      }
+
+      select('#item-image').src = item.image;
+      select('#item-name').textContent = item.name;
+      select('#item-points').textContent = item.points;
+      select('#item-desc').textContent = item.desc;
+
+      let itemPropertiesHtml = '';
+      item.properties.forEach(o => {
+        itemPropertiesHtml += `<div class="flex items-center justify-between mt-4">`;
+        itemPropertiesHtml += ` <div>`;
+        itemPropertiesHtml += `  <p class="text-sm">${o.title}</p>`;
+        itemPropertiesHtml += ` </div>`;
+        itemPropertiesHtml += ` <div>`;
+        itemPropertiesHtml += `  <p class="text-sm text-neutral-400">${o.content}</p>`;
+        itemPropertiesHtml += ` </div>`;
+        itemPropertiesHtml += `</div>`;
+      })
+      if (itemPropertiesHtml) {
+        select('#item-properties').innerHTML = itemPropertiesHtml;
+      }
+
+      select('#share-dom-item-image-qr').src = item.image_qr;
+
+      const observer = new IntersectionObserver((entries) => {
+        for (let i of entries) {
+          if (i.isIntersecting) {
+            let img = i.target;
+            let trueSrc = img.getAttribute("data-src");
+            img.setAttribute("src", trueSrc);
+            observer.unobserve(img);
+          }
+        }
+      });
+      select(".lazy-img", true).forEach(i => {
+        observer.observe(i);
+      })
+
+
+      let exchangeNum = 1;
+      let totalPoints = item.points * exchangeNum;
+      on('click', '#btn-show-popup-exchange', function () {
+        select('#popup-exchange').classList.remove('invisible');
+        select('#popup-exchange-item-name').textContent = item.name;
+        select('#popup-exchange-num').textContent = exchangeNum;
+        select('#popup-exchange-total-points').textContent = totalPoints;
+      });
+      on('click', '#btn-hide-popup-exchange', function () {
+        select('#popup-exchange').classList.add('invisible');
+      });
+      on('click', '#btn-minus-exchange-num', function () {
+        if (exchangeNum <= 1) {
+          return
+        }
+
+        --exchangeNum;
+        totalPoints = item.points * exchangeNum;
+
+        select('#popup-exchange-num').textContent = exchangeNum;
+        select('#popup-exchange-total-points').textContent = totalPoints;
+      });
+      on('click', '#btn-plus-exchange-num', function () {
+        ++exchangeNum;
+        totalPoints = item.points * exchangeNum;
+
+        select('#popup-exchange-num').textContent = exchangeNum;
+        select('#popup-exchange-total-points').textContent = totalPoints;
+      });
+
+      if (ClipboardJS.isSupported()) {
+        on('click', '#btn-copy-exchange-info', function () {
+          let clipboard = new ClipboardJS('#btn-copy-exchange-info', {
+            text: function () {
+              return `兑换：${item.name}（数量 ${exchangeNum}）；合计：${totalPoints}积分`;
+            },
+          });
+
+          clipboard.on("success", () => {
+            clipboard.destroy();
+
+            select('#toast-text').textContent = '复制成功！马上发给店长下单吧～';
+            select('#toast').classList.remove('invisible');
+
+            setTimeout(() => {
+              select('#toast').classList.add('invisible');
+              select('#toast-text').textContent = '';
+            }, 2000);
+          });
+          clipboard.on("error", () => {
+            clipboard.destroy();
+          });
+        });
+      } else {
+        select('#btn-copy-exchange-info').classList.add('hidden');
+      }
+
+      on('click', '#btn-show-popup-share', async function () {
+        select('#share-dom-item-image').src = select('#item-image').src;
+        select('#share-dom-item-name').textContent = select('#item-name').textContent;
+        select('#share-dom-item-desc').textContent = select('#item-desc').textContent;
+
+        const canvas = await html2canvas(select('#share-dom'), {
+          useCORS: true, // 使用跨域
+        });
+
+        const base64ImgSrc = canvas.toDataURL("image/jpg");
+        document.querySelector("#share-post").src = base64ImgSrc;
+
+        select('#popup-share').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-share', function () {
+        select('#popup-share').classList.add('invisible');
+      });
+    },
   }
 
   const page = select('body');
