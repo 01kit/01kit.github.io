@@ -673,7 +673,7 @@
           clipboard.on("success", () => {
             clipboard.destroy();
 
-            select('#toast-text').textContent = '复制成功！马上发给店长下单吧～';
+            select('#toast-text').textContent = '复制成功！马上发给店长兑换吧～';
             select('#toast').classList.remove('invisible');
 
             setTimeout(() => {
