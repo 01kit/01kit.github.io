@@ -14,7 +14,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body id="page-home" class="bg-neutral-50">
+<body id="page-corporation" class="bg-neutral-50">
   <div class="fixed z-30 left-0 top-0 w-full flex items-center justify-between p-4 py-3 mb-3 text-sm text-black bg-white shadow-lg" id="btn-show-popup-offical-qr">
     <div class="pe-2"><img src="/p/wy/img/favicon.jpg" class="mx-auto w-6 rounded-md" alt="Loading..." /></div>
     <div class="flex-1 font-bold">关注红酒青年公众号，实时查看商品动态</div>
@@ -26,14 +26,25 @@
   </div>
   <div class="p-4 pt-20">
     <div class="flex items-center justify-between mb-4 font-bold">
-      <a href="/p/wy/cart">
-        <div class="flex items-center justify-end">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-          </svg>
-          <span class="text-sm ps-1" id="lnk-add-cart">购物清单(<span id="carts-count">0</span>)</span>
+      <div class="flex items-center">
+        <div class="pe-4">
+          <a href="javascript:history.go(-1);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </a>
         </div>
-      </a>
+        <div>
+          <a href="/p/wy/cart">
+            <div class="flex items-center justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+              </svg>
+              <span class="text-sm ps-1" id="lnk-add-cart">购物清单(<span id="carts-count">0</span>)</span>
+            </div>
+          </a>
+        </div>
+      </div>
       <div class="flex items-center">
         <div class="flex items-center pe-4">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
@@ -45,59 +56,33 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15m0-3-3-3m0 0-3 3m3-3V15" />
           </svg>
-          <p class="text-sm" id="btn-show-popup-offical-post">分享</p>
+          <p class="text-sm" id="btn-show-popup-share-post">分享</p>
         </div>
       </div>
     </div>
-    <img src="/p/wy/img/banner-1.jpg" class="rounded-xl shadow-lg" />
-    <div class="flex items-center justify-between mt-4">
-      <div class="flex-1 me-1 p-4 flex items-center justify-between bg-white rounded-xl shadow-lg">
-        <div class="rounded-2xl p-2 bg-blue-300 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-          </svg>
-        </div>
-        <div class="flex-1 text-right">
-          <a href="/p/wy/points-mall">
-            <p class="text-md font-bold">积分当钱花</p>
-            <p class="text-xs">小积分大用处</p>
-          </a>
-        </div>
-      </div>
-      <div class="flex-1 ms-1 p-4 flex items-center justify-between bg-white rounded-xl shadow-lg">
-        <div class="rounded-2xl p-2 bg-blue-300 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-          </svg>
-        </div>
-        <div class="flex-1 text-right">
-          <a href="/p/wy/corporation.html">
-            <p class="text-md font-bold">企业采购</p>
-            <p class="text-xs">畅享N+权益</p>
-          </a>
-        </div>
-      </div>
-    </div>
+    <img src="/p/wy/img/banner-3.jpg" class="rounded-xl shadow-lg" />
     <div class="flex items-center justify-between py-3 pt-6 px-2">
       <div>
-        <p class="text-lg font-bold ps-1" id="lnk-add-cart">夏日微熏推荐</p>
-      </div>
-      <div class="flex items-center">
-        <p class="ps-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6" id="btn-show-popup-filter">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-          </svg>
-        </p>
+        <p class="text-lg font-bold ps-1" id="lnk-add-cart">企业客户权益</p>
       </div>
     </div>
-    <div id="items" class="grid grid-cols-2 gap-3"></div>
+    <div class="grid grid-cols-2 gap-3">
+      <div class="p-2 rounded-2xl shadow-lg bg-white relative"> <img src="/p/wy/img/w-package.jpg" class="item-image w-2/3 mx-auto rounded-2xl" alt="loading..." data-src="/p/wy/img/jdecard/classic/thumbnail/2.jpg">
+        <p class="mt-4 text-sm font-bold text-center">赠红酒包装礼盒</p>
+        <p class="mt-2 text-sm text-center"><span class="text-xs pr-1">可加印企业LOGO</span></p>
+      </div>
+      <div class="p-2 rounded-2xl shadow-lg bg-white relative"> <img src="/p/wy/img/jdecard/classic/thumbnail/3.jpg" class="item-image w-2/3 mx-auto my-2 rounded-2xl" alt="loading..." data-src="/p/wy/img/jdecard/classic/thumbnail/2.jpg">
+        <p class="mt-4 text-sm font-bold text-center">赠京东E卡</p>
+        <p class="mt-2 text-sm text-center"><span class="text-xs pr-1">京东商城购物抵扣</span></p>
+      </div>
+    </div>
+    <!-- <div id="items" class="grid grid-cols-2 gap-3"></div> -->
   </div>
   <div id="popup-filter" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
     <div class="bg-white rounded-2xl p-4 py-6 w-80 text-center shadow-lg">
       <h1 class="font-bold text-xl">商品排序</h1>
-      <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl !bg-rose-500 text-white font-bold" data-sort="default">默认综合</p>
-      <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl" data-sort="price-asc">价格由低到高</p>
-      <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl" data-sort="price-desc">价格由高到低</p>
+      <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl !bg-rose-500 text-white font-bold" data-sort="points-asc">价格由低到高</p>
+      <p class="filter-item text-md mt-4 bg-slate-950/10 p-4 rounded-xl" data-sort="points-desc">价格由高到低</p>
     </div>
     <div class="text-center text-white pt-8 opacity-60">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10" id="btn-hide-popup-filter">
@@ -139,13 +124,13 @@
       </svg>
     </div>
   </div>
-  <div id="popup-offical-post" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
+  <div id="popup-share-post" class="invisible w-full h-full bg-slate-950/30 fixed top-0 left-0 z-30 flex items-center justify-center flex-col">
     <div class="bg-rose-500 rounded-2xl w-4/5 text-center shadow-lg overflow-hidden relative">
-      <img src="/p/wy/img/offical-summer-post.jpg" class="mx-auto w-full" alt="Loading..." />
-      <p class="text-sm font-bold text-white w-full text-center absolute z-50 left-0 bottom-4">长按海报分享好友或朋友圈</p>
+      <img src="/p/wy/img/corporation-post.jpg" class="mx-auto w-full" alt="Loading..." />
+      <p class="text-sm font-bold text-white w-full text-center absolute z-50 left-0 bottom-1">长按海报分享好友或朋友圈</p>
     </div>
     <div class="text-center text-white pt-8 opacity-60">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10" id="btn-hide-popup-offical-post">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10" id="btn-hide-popup-share-post">
         <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
       </svg>
     </div>

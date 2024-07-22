@@ -707,6 +707,31 @@
         select('#popup-share').classList.add('invisible');
       });
     },
+    'page-corporation': async function () {
+      on('click', '#btn-show-popup-contact-qr', function () {
+        select('#popup-contact-qr').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-contact-qr', function () {
+        select('#popup-contact-qr').classList.add('invisible');
+      });
+
+      on('click', '#btn-show-popup-offical-qr', function () {
+        select('#popup-offical-qr').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-offical-qr', function () {
+        select('#popup-offical-qr').classList.add('invisible');
+      });
+
+      on('click', '#btn-show-popup-share-post', function () {
+        select('#popup-share-post').classList.remove('invisible');
+      });
+      on('click', '#btn-hide-popup-share-post', function () {
+        select('#popup-share-post').classList.add('invisible');
+      });
+
+      const carts = await _http.fetchCarts();
+      select('#carts-count').textContent = carts.length;
+    },
   }
 
   const page = select('body');
