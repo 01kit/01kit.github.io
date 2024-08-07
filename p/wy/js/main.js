@@ -189,7 +189,7 @@
       }
 
       select('#item-image').src = item.image;
-      select('#item-name').textContent = item.name;
+      select('#item-name').textContent = `${item.country}${item.name}`;
       select('#item-name-en').textContent = item.name_en;
       select('#item-price').textContent = item.price;
       select('#item-desc').textContent = item.desc;
