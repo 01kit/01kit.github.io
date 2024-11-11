@@ -16,7 +16,8 @@
       "grapes": "维蒂奇诺",
       "vol": "13%VOL",
       "temperature": "6-8°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": false
     },
     {
       "id": 18,
@@ -34,7 +35,8 @@
       "grapes": "帕斯琳娜",
       "vol": "12.5%VOL",
       "temperature": "6-8°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": false
     },
     {
       "id": 1,
@@ -52,7 +54,8 @@
       "grapes": "丹魄、西拉",
       "vol": "13.5%VOL",
       "temperature": "15-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 10,
@@ -70,7 +73,8 @@
       "grapes": "蒙特普奇诺、赤霞珠、桑娇维塞、梅洛",
       "vol": "13%VOL",
       "temperature": "15-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 9,
@@ -88,7 +92,8 @@
       "grapes": "黑曼罗",
       "vol": "13.5%VOL",
       "temperature": "16-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": false
     },
     {
       "id": 5,
@@ -106,7 +111,8 @@
       "grapes": "丹魄、黑皮诺",
       "vol": "14%VOL",
       "temperature": "15-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 8,
@@ -124,7 +130,8 @@
       "grapes": "西拉",
       "vol": "13.5%VOL",
       "temperature": "14-16°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": false
     },
     {
       "id": 15,
@@ -142,7 +149,8 @@
       "grapes": "梅洛",
       "vol": "12.5%VOL",
       "temperature": "18-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": false
     },
     {
       "id": 12,
@@ -160,7 +168,8 @@
       "grapes": "巴贝拉、多切桃、赤霞珠",
       "vol": "13%VOL",
       "temperature": "15-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 13,
@@ -178,7 +187,8 @@
       "grapes": "巴贝拉",
       "vol": "14.5%VOL",
       "temperature": "14-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 14,
@@ -196,7 +206,8 @@
       "grapes": "美乐、品丽珠、赤霞珠",
       "vol": "13%VOL",
       "temperature": "17-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 2,
@@ -214,7 +225,8 @@
       "grapes": "丹魄",
       "vol": "15%VOL",
       "temperature": "15-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 3,
@@ -232,7 +244,8 @@
       "grapes": "丹魄",
       "vol": "14%VOL",
       "temperature": "15-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 4,
@@ -250,7 +263,8 @@
       "grapes": "丹魄、西拉",
       "vol": "14%VOL",
       "temperature": "15-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 6,
@@ -268,7 +282,8 @@
       "grapes": "丹魄、格拉西亚诺",
       "vol": "13.5%VOL",
       "temperature": "15-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 7,
@@ -286,7 +301,8 @@
       "grapes": "丹魄、歌海娜",
       "vol": "13.5%VOL",
       "temperature": "14-16°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 11,
@@ -304,7 +320,8 @@
       "grapes": "蒙特普奇诺、桑娇维塞、梅洛",
       "vol": "13.5%VOL",
       "temperature": "15-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 16,
@@ -322,7 +339,8 @@
       "grapes": "蒙特普奇诺、桑娇维塞",
       "vol": "13.5%VOL",
       "temperature": "16-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": false
     },
     {
       "id": 19,
@@ -340,7 +358,8 @@
       "grapes": "巴贝拉",
       "vol": "14%VOL",
       "temperature": "18-20°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     },
     {
       "id": 20,
@@ -358,7 +377,8 @@
       "grapes": "黑曼罗、苏苏曼尼洛",
       "vol": "14%VOL",
       "temperature": "16-18°C",
-      "volume": "750ML"
+      "volume": "750ML",
+      "onsale": true
     }
   ]
 }

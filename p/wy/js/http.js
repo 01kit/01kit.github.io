@@ -3,7 +3,7 @@
 async function _fetchItems() {
   const response = await fetch("/p/wy/data/w.json")
   const data = await response.json();
-  return data.items;
+  return data.items.filter(item=>item.onsale === true);
 }
 
 async function _fetchItem(id) {
